@@ -151,3 +151,210 @@ module.exports = router;[2026-03-22T11:33:06.428Z] USER_LOGIN: user=rohit.verma@
 [2026-04-03T23:06:52.701Z] VIEW_AUDIT_LOGS_REQUEST: admin=9001
 [2026-04-03T23:06:52.714Z] VIEW_REQUESTS_SUCCESS: user=9001 role=Admin records=18
 [2026-04-03T23:06:52.722Z] VIEW_AUDIT_LOGS_SUCCESS: admin=9001 records=29
+[2026-04-04T17:32:55.434Z] USER_LOGIN: user=rajesh.khanna@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T17:33:15.065Z] USER_LOGIN: user=anita.desai@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T17:33:17.120Z] USER_LOGIN: user=anita.desai@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T17:34:23.813Z] USER_LOGIN: user=suresh.iyer@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T17:35:04.365Z] USER_LOGIN: user=meena.shah@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T17:46:08.639Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.640Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T17:46:08.644Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T17:46:08.644Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.646Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.646Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T17:46:08.648Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T17:46:08.648Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.649Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.649Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T17:46:08.651Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.651Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T17:46:08.652Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T17:46:08.652Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:08.654Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T17:46:08.654Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T17:46:10.671Z] UPDATE_REQUEST_SUCCESS: admin=9001 requestId=1 status=approved
+[2026-04-04T17:46:10.677Z] UPDATE_REQUEST_SUCCESS: admin=9003 requestId=1 status=approved
+[2026-04-04T17:46:10.676Z] UPDATE_REQUEST_SUCCESS: admin=9002 requestId=1 status=rejected
+[2026-04-04T17:46:10.677Z] UPDATE_REQUEST_SUCCESS: admin=9004 requestId=1 status=rejected
+[2026-04-04T17:46:10.679Z] UPDATE_REQUEST_SUCCESS: admin=9001 requestId=1 status=approved
+[2026-04-04T17:46:10.680Z] UPDATE_REQUEST_SUCCESS: admin=9002 requestId=1 status=rejected
+[2026-04-04T17:46:10.681Z] UPDATE_REQUEST_SUCCESS: admin=9004 requestId=1 status=rejected
+[2026-04-04T17:46:10.680Z] UPDATE_REQUEST_SUCCESS: admin=9003 requestId=1 status=approved
+[2026-04-04T18:15:09.222Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:15:09.220Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.226Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:15:09.226Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.228Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.231Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:15:09.234Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:15:09.234Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.228Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:15:09.236Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:15:09.238Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.238Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:15:09.236Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.231Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.239Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:15:09.240Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:15:09.241Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 (already processed)
+[2026-04-04T18:15:09.243Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 (already processed)
+[2026-04-04T18:15:09.244Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 (already processed)
+[2026-04-04T18:15:09.244Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 (already processed)
+[2026-04-04T18:15:09.245Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 (already processed)
+[2026-04-04T18:15:09.245Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 (already processed)
+[2026-04-04T18:15:09.245Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 (already processed)
+[2026-04-04T18:15:09.246Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 (already processed)
+[2026-04-04T18:22:29.926Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:29.925Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.930Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:29.932Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:29.929Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.931Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.933Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:29.933Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.934Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.936Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:29.938Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.934Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:29.936Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.938Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:29.940Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:29.940Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:29.941Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:29.944Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:29.948Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:29.950Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:29.946Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:29.947Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:22:29.951Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:29.952Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:22:34.112Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:34.114Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.116Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:34.112Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.114Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:34.116Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.117Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:34.117Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.118Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:34.120Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:34.119Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.121Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.118Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.121Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:34.122Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:34.122Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:34.122Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:34.123Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:34.124Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:34.124Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:22:34.125Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:34.126Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:34.126Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:34.126Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:22:39.048Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:39.048Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.050Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.051Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.050Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:39.051Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:39.052Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.052Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:39.053Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.054Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:22:39.055Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:22:39.055Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.056Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.056Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:22:39.057Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:22:39.057Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:22:39.057Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:39.057Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:39.058Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:22:39.058Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:39.060Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:22:39.059Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:22:39.059Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:22:39.060Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:48:39.316Z] USER_LOGIN: user=rohit.verma@iitam.ac.in role=Student SUCCESS
+[2026-04-04T18:48:39.377Z] VIEW_REQUESTS: user=230015 role=Student
+[2026-04-04T18:48:39.388Z] VIEW_COURSES_REQUEST: user=230015 role=Student
+[2026-04-04T18:48:39.407Z] VIEW_REQUESTS_SUCCESS: user=230015 records=3
+[2026-04-04T18:48:39.418Z] VIEW_COURSES_SUCCESS: user=230015
+[2026-04-04T18:48:41.277Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=301
+[2026-04-04T18:48:41.288Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=301
+[2026-04-04T18:48:42.005Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=302
+[2026-04-04T18:48:42.007Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=302
+[2026-04-04T18:48:43.477Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=401
+[2026-04-04T18:48:43.480Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=401
+[2026-04-04T18:48:44.697Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=302
+[2026-04-04T18:48:44.699Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=302
+[2026-04-04T18:48:45.732Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=301
+[2026-04-04T18:48:45.731Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=301
+[2026-04-04T18:49:03.652Z] ACCESS_GRANTED: user=230015 role=Student allowed=POST /api/request
+[2026-04-04T18:49:03.653Z] CREATE_REQUEST_ATTEMPT: user=230015 attendanceId=205
+[2026-04-04T18:49:03.685Z] CREATE_REQUEST_SUCCESS: user=230015 requestId=60
+[2026-04-04T18:49:07.319Z] VIEW_REQUESTS: user=230015 role=Student
+[2026-04-04T18:49:07.323Z] VIEW_COURSES_REQUEST: user=230015 role=Student
+[2026-04-04T18:49:07.326Z] VIEW_REQUESTS_SUCCESS: user=230015 records=4
+[2026-04-04T18:49:07.327Z] VIEW_COURSES_SUCCESS: user=230015
+[2026-04-04T18:49:09.588Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=301
+[2026-04-04T18:49:09.590Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=301
+[2026-04-04T18:50:22.638Z] USER_LOGIN: user=meena.shah@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T18:50:34.767Z] USER_LOGIN: user=suresh.iyer@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T18:50:53.688Z] USER_LOGIN: user=anita.desai@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T18:51:10.244Z] USER_LOGIN: user=rajesh.khanna@iitam.ac.in role=Admin SUCCESS
+[2026-04-04T18:52:17.594Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.596Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:52:17.602Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.602Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:52:17.606Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:52:17.605Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.608Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.611Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.615Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.608Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:52:17.615Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=1 status=rejected
+[2026-04-04T18:52:17.612Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=1 status=approved
+[2026-04-04T18:52:17.618Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.618Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=1 status=approved
+[2026-04-04T18:52:17.621Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=1 status=rejected
+[2026-04-04T18:52:17.621Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/1
+[2026-04-04T18:52:17.623Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:52:17.630Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:52:17.631Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:52:17.628Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:52:17.634Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=1 already processed
+[2026-04-04T18:52:17.633Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=1 already processed
+[2026-04-04T18:52:17.635Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=1 already processed
+[2026-04-04T18:52:17.636Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=1 already processed
+[2026-04-04T18:55:01.069Z] VIEW_COURSES_REQUEST: user=230015 role=Student
+[2026-04-04T18:55:01.074Z] VIEW_REQUESTS: user=230015 role=Student
+[2026-04-04T18:55:01.078Z] VIEW_COURSES_SUCCESS: user=230015
+[2026-04-04T18:55:01.082Z] VIEW_REQUESTS_SUCCESS: user=230015 records=4
+[2026-04-04T18:55:03.773Z] VIEW_ATTENDANCE_REQUEST: user=230015 role=Student course=301
+[2026-04-04T18:55:03.777Z] VIEW_ATTENDANCE_SUCCESS: user=230015 role=Student course=301
+[2026-04-04T18:55:40.792Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.798Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=60 status=approved
+[2026-04-04T18:55:40.798Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.793Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=60 status=rejected
+[2026-04-04T18:55:40.800Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.800Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=60 status=approved
+[2026-04-04T18:55:40.802Z] ACCESS_GRANTED: user=9001 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.803Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.803Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=60 status=rejected
+[2026-04-04T18:55:40.807Z] UPDATE_REQUEST_ATTEMPT: admin=9003 requestId=60 status=approved
+[2026-04-04T18:55:40.805Z] UPDATE_REQUEST_ATTEMPT: admin=9002 requestId=60 status=rejected
+[2026-04-04T18:55:40.805Z] ACCESS_GRANTED: user=9002 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.807Z] ACCESS_GRANTED: user=9003 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.802Z] UPDATE_REQUEST_ATTEMPT: admin=9001 requestId=60 status=approved
+[2026-04-04T18:55:40.808Z] ACCESS_GRANTED: user=9004 role=Admin allowed=PUT /api/request/60
+[2026-04-04T18:55:40.808Z] UPDATE_REQUEST_ATTEMPT: admin=9004 requestId=60 status=rejected
+[2026-04-04T18:55:40.809Z] UPDATE_REQUEST_SUCCESS: admin=9002 requestId=60 status=rejected
+[2026-04-04T18:55:40.815Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=60 already processed
+[2026-04-04T18:55:40.814Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=60 already processed
+[2026-04-04T18:55:40.816Z] UPDATE_REQUEST_SKIPPED: admin=9001 requestId=60 already processed
+[2026-04-04T18:55:40.817Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=60 already processed
+[2026-04-04T18:55:40.818Z] UPDATE_REQUEST_SKIPPED: admin=9002 requestId=60 already processed
+[2026-04-04T18:55:40.819Z] UPDATE_REQUEST_SKIPPED: admin=9003 requestId=60 already processed
+[2026-04-04T18:55:40.820Z] UPDATE_REQUEST_SKIPPED: admin=9004 requestId=60 already processed

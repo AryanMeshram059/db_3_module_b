@@ -120,15 +120,24 @@ router.put("/request/:id", auth, allowRoles("Admin"), (req, res) => {
   db.query(
     `UPDATE attendance_request
      SET Status = ?, ProcessedBy = ?
-     WHERE RequestID = ?`,
+     WHERE RequestID = ? AND Status = 'pending'`,
     [status, req.user.id, requestId],
-    (err) => {
+    (err, result) => {
       if (err) {
         logAction(
           "UPDATE_REQUEST_ERROR",
           `admin=${req.user.id} requestId=${requestId}`
         );
-        return res.status(500).send(err);
+        return res.status(500).send("Database error ❌");
+      }
+
+      // 🔥 If no rows updated → already processed
+      if (result.affectedRows === 0) {
+        logAction(
+          "UPDATE_REQUEST_SKIPPED",
+          `admin=${req.user.id} requestId=${requestId} already processed`
+        );
+        return res.send("Already processed by another admin ❌");
       }
 
       logAction(
@@ -136,7 +145,7 @@ router.put("/request/:id", auth, allowRoles("Admin"), (req, res) => {
         `admin=${req.user.id} requestId=${requestId} status=${status}`
       );
 
-      res.send("Request updated ✅");
+      res.send("Request updated safely ✅");
     }
   );
 });
