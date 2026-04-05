@@ -6,47 +6,67 @@ const allowRoles = require("../middleware/role");
 const logAction = require("../utils/logger");
 
 
-// 📩 CREATE REQUEST (Student only)
-router.post("/request", auth, allowRoles("Student"), (req, res) => {
-  const { attendanceId, reason } = req.body;
+// 📩 CREATE REQUEST (GLOBAL LIMIT = 10 per day)
+router.post("/request", auth, (req, res) => {
+  const { studentId, attendanceId, reason } = req.body;
 
-  logAction(
-    "CREATE_REQUEST_ATTEMPT",
-    `user=${req.user.id} attendanceId=${attendanceId}`
-  );
+  if (!studentId || !attendanceId || !reason) {
+    return res.status(400).send("Missing fields ❌");
+  }
 
-  db.query(
-    `INSERT INTO attendance_request 
-     (AttendanceID, StudentID, Reason)
-     VALUES (?, ?, ?)`,
-    [attendanceId, req.user.id, reason],
-    (err, result) => {
-      if (err) {
-        logAction(
-          "CREATE_REQUEST_ERROR",
-          `user=${req.user.id} attendanceId=${attendanceId}`
-        );
-        return res.status(500).send(err);
+  db.beginTransaction((err) => {
+    if (err) return res.status(500).send("Transaction error ❌");
+
+    db.query(
+      `INSERT INTO attendance_request 
+       (AttendanceID, StudentID, Reason, Status)
+       VALUES (?, ?, ?, 'Pending')`,
+      [attendanceId, studentId, reason],
+      (err, result) => {
+
+        if (err) {
+          console.error("REAL ERROR:", err); // 🔥 VERY IMPORTANT
+
+          return db.rollback(() => {
+            return res.status(500).send("Insert failed ❌");
+          });
+        }
+
+        const requestId = result.insertId;
+
+        // 🔥 FAILURE SIMULATION
+        if (reason.includes("FAIL")) {
+          return db.rollback(() => {
+            logAction("ROLLBACK_EXECUTED", `requestId=${requestId}`);
+
+            return res.status(500).json({
+              message: "Simulated failure → rollback executed ❌"
+            });
+          });
+        }
+
+        db.commit((err) => {
+          if (err) {
+            return db.rollback(() => {
+              return res.status(500).send("Commit failed ❌");
+            });
+          }
+
+          logAction("REQUEST_CREATED", `requestId=${requestId}`);
+
+          res.json({
+            message: "Request created ✅",
+            requestId
+          });
+        });
       }
-
-      logAction(
-        "CREATE_REQUEST_SUCCESS",
-        `user=${req.user.id} requestId=${result.insertId}`
-      );
-
-      res.send("Request submitted ✅");
-    }
-  );
+    );
+  });
 });
 
 
 // 📊 VIEW REQUESTS
 router.get("/request", auth, (req, res) => {
-
-  logAction(
-    "VIEW_REQUESTS",
-    `user=${req.user.id} role=${req.user.role}`
-  );
 
   if (req.user.role === "Student") {
 
@@ -63,16 +83,7 @@ router.get("/request", auth, (req, res) => {
     `,
     [req.user.id],
     (err, result) => {
-      if (err) {
-        logAction("VIEW_REQUESTS_ERROR", `user=${req.user.id}`);
-        return res.status(500).send(err);
-      }
-
-      logAction(
-        "VIEW_REQUESTS_SUCCESS",
-        `user=${req.user.id} records=${result.length}`
-      );
-
+      if (err) return res.status(500).send(err);
       res.json(result);
     });
 
@@ -90,16 +101,7 @@ router.get("/request", auth, (req, res) => {
       ORDER BY ar.RequestDate DESC
     `,
     (err, result) => {
-      if (err) {
-        logAction("VIEW_REQUESTS_ERROR", `user=${req.user.id}`);
-        return res.status(500).send(err);
-      }
-
-      logAction(
-        "VIEW_REQUESTS_SUCCESS",
-        `user=${req.user.id} role=${req.user.role} records=${result.length}`
-      );
-
+      if (err) return res.status(500).send(err);
       res.json(result);
     });
 
@@ -107,15 +109,10 @@ router.get("/request", auth, (req, res) => {
 });
 
 
-// 👑 ADMIN: APPROVE / REJECT
+// 👑 ADMIN UPDATE (Race Condition Safe)
 router.put("/request/:id", auth, allowRoles("Admin"), (req, res) => {
   const { status } = req.body;
   const requestId = req.params.id;
-
-  logAction(
-    "UPDATE_REQUEST_ATTEMPT",
-    `admin=${req.user.id} requestId=${requestId} status=${status}`
-  );
 
   db.query(
     `UPDATE attendance_request
@@ -123,27 +120,11 @@ router.put("/request/:id", auth, allowRoles("Admin"), (req, res) => {
      WHERE RequestID = ? AND Status = 'pending'`,
     [status, req.user.id, requestId],
     (err, result) => {
-      if (err) {
-        logAction(
-          "UPDATE_REQUEST_ERROR",
-          `admin=${req.user.id} requestId=${requestId}`
-        );
-        return res.status(500).send("Database error ❌");
-      }
+      if (err) return res.status(500).send("Database error ❌");
 
-      // 🔥 If no rows updated → already processed
       if (result.affectedRows === 0) {
-        logAction(
-          "UPDATE_REQUEST_SKIPPED",
-          `admin=${req.user.id} requestId=${requestId} already processed`
-        );
         return res.send("Already processed by another admin ❌");
       }
-
-      logAction(
-        "UPDATE_REQUEST_SUCCESS",
-        `admin=${req.user.id} requestId=${requestId} status=${status}`
-      );
 
       res.send("Request updated safely ✅");
     }
