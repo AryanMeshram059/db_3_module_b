@@ -5,10 +5,10 @@ const auth = require("../middleware/auth");
 const allowRoles = require("../middleware/role");
 const logAction = require("../utils/logger");
 
-// 👑 ADMIN ONLY: VIEW LOGS
+//  ADMIN ONLY: VIEW LOGS
 router.get("/logs", auth, allowRoles("Admin"), (req, res) => {
 
-  // 🔥 Log request attempt
+  //  Log request attempt
   logAction(
     "VIEW_AUDIT_LOGS_REQUEST",
     `admin=${req.user.id}`

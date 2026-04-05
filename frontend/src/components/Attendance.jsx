@@ -10,6 +10,17 @@ function Attendance() {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [reason, setReason] = useState("");
 
+  // 🔑 Get studentId from JWT
+  const getStudentIdFromToken = () => {
+    try {
+      const token = localStorage.getItem("token");
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      return payload.id;
+    } catch {
+      return null;
+    }
+  };
+
   // 📌 Load courses
   useEffect(() => {
     API.get("/courses")
@@ -30,28 +41,43 @@ function Attendance() {
     }
   };
 
-  // 📌 Submit request (FIXED)
+  // 📌 Submit request (FINAL FIXED)
   const submitRequest = async () => {
     if (!reason.trim()) {
       alert("Please enter a reason");
       return;
     }
 
+    const studentId = getStudentIdFromToken();
+
+    if (!studentId) {
+      alert("User not authenticated ❌");
+      return;
+    }
+
     try {
-      await API.post("/request", {
-        attendanceId: selectedRecord.AttendanceID, // ✅ CORRECT
-        reason: reason                              // ✅ CORRECT
+      const res = await API.post("/request", {
+        studentId: studentId,                         // ✅ REQUIRED
+        attendanceId: selectedRecord.AttendanceID,    // ✅ REQUIRED
+        reason: reason                                // ✅ REQUIRED
       });
 
-      alert("Request sent ✅");
+      alert(res.data.message || "Request created ✅");
 
-      // reset
+      // 🔄 Reload attendance after success
+      await loadAttendance(selectedRecord.CourseID);
+
+      // reset UI
       setSelectedRecord(null);
       setReason("");
 
     } catch (err) {
       console.error("ERROR:", err.response?.data || err);
-      alert("Request failed ❌");
+
+      alert(
+        err.response?.data?.message ||
+        "Request failed ❌"
+      );
     }
   };
 
@@ -121,7 +147,7 @@ function Attendance() {
                     )
                   )}
                 </td>
-                  
+
               </tr>
             ))}
           </tbody>

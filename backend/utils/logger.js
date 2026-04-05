@@ -4,7 +4,7 @@ const path = require("path");
 // Path to audit.log
 const logFilePath = path.join(__dirname, "../logs/audit.log");
 
-// 🔥 Ensure logs folder + file exist
+// Ensure logs folder + file exist
 const logDir = path.dirname(logFilePath);
 
 if (!fs.existsSync(logDir)) {

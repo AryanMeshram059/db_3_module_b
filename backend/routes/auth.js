@@ -17,7 +17,7 @@ router.post("/login", (req, res) => {
         return res.status(500).send("Server error");
       }
 
-      // ❌ User not found
+      //  User not found
       if (result.length === 0) {
         logAction("USER_LOGIN", `email=${email} FAILED (User not found)`);
         return res.status(401).send("User not found");
@@ -25,13 +25,13 @@ router.post("/login", (req, res) => {
 
       const user = result[0];
 
-      // ❌ Wrong password
+      // Wrong password
       if (password !== user.PasswordHash) {
         logAction("USER_LOGIN", `email=${email} FAILED (Wrong password)`);
         return res.status(401).send("Invalid password");
       }
 
-      // ✅ Success
+      //  Success
       const token = jwt.sign(
         {
           id: user.MemberID,

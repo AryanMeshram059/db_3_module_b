@@ -4,11 +4,11 @@ const db = require("../db");
 const auth = require("../middleware/auth");
 const logAction = require("../utils/logger");
 
-// 📊 GET attendance
+// GET attendance
 router.get("/attendance/:courseId", auth, (req, res) => {
   const courseId = req.params.courseId;
 
-  // 👇 Log request start
+  // Log request start
   logAction(
     "VIEW_ATTENDANCE_REQUEST",
     `user=${req.user.id} role=${req.user.role} course=${courseId}`
@@ -95,7 +95,7 @@ router.get("/attendance/:courseId", auth, (req, res) => {
 });
 
 
-// 📚 GET courses
+//  GET courses
 router.get("/courses", auth, (req, res) => {
 
   logAction(

@@ -6,7 +6,7 @@ const allowRoles = require("../middleware/role");
 const logAction = require("../utils/logger");
 
 
-// 📩 CREATE REQUEST (GLOBAL LIMIT = 10 per day)
+//  CREATE REQUEST (GLOBAL LIMIT = 10 per day)
 router.post("/request", auth, (req, res) => {
   const { studentId, attendanceId, reason } = req.body;
 
@@ -25,7 +25,7 @@ router.post("/request", auth, (req, res) => {
       (err, result) => {
 
         if (err) {
-          console.error("REAL ERROR:", err); // 🔥 VERY IMPORTANT
+          console.error("REAL ERROR:", err); //  IMPORTANT
 
           return db.rollback(() => {
             return res.status(500).send("Insert failed ❌");
@@ -34,7 +34,7 @@ router.post("/request", auth, (req, res) => {
 
         const requestId = result.insertId;
 
-        // 🔥 FAILURE SIMULATION
+        //  FAILURE SIMULATION
         if (reason.includes("FAIL")) {
           return db.rollback(() => {
             logAction("ROLLBACK_EXECUTED", `requestId=${requestId}`);
@@ -65,7 +65,7 @@ router.post("/request", auth, (req, res) => {
 });
 
 
-// 📊 VIEW REQUESTS
+// VIEW REQUESTS
 router.get("/request", auth, (req, res) => {
 
   if (req.user.role === "Student") {
@@ -109,7 +109,7 @@ router.get("/request", auth, (req, res) => {
 });
 
 
-// 👑 ADMIN UPDATE (Race Condition Safe)
+// (Race Condition Safe)
 router.put("/request/:id", auth, allowRoles("Admin"), (req, res) => {
   const { status } = req.body;
   const requestId = req.params.id;
